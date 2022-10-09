@@ -10,21 +10,27 @@ using System.Windows.Forms;
 
 namespace quanLyThuVien
 {
-    public partial class Form2 : Form
+    public partial class ChiTietSach : Form
     {
-        public Form2()
+        public ChiTietSach()
         {
             InitializeComponent();
         }
 
-        private string ten, tacGia, namXuatBan, theLoai, daMuon,anh;
+        private string ten, tacGia, namXuatBan, theLoai, tonKho,anh,nhaXB;
 
-        public Form2(string Ten,string TacGia,string NamXuatBan,string TheLoai,string DaMuon,string Anh): this(){
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public ChiTietSach(string Ten,string TacGia,string NamXuatBan,string TheLoai,string NhaXB,string TonKho,string Anh): this(){
             ten= Ten;
             tacGia= TacGia;
             namXuatBan= NamXuatBan;
             theLoai= TheLoai;
-            daMuon = DaMuon;
+            tonKho= TonKho;
+            nhaXB= NhaXB;
             anh= Anh;
         }
 
@@ -42,9 +48,10 @@ namespace quanLyThuVien
             textBox2.Text = tacGia;
             textBox3.Text = namXuatBan;
             textBox4.Text = theLoai;
-            textBox5.Text = daMuon;
+            textBox5.Text = nhaXB;
+            textBox6.Text = tonKho;
+
             pictureBox1.Image = Image.FromFile(anh);
-            //pictureBox1.ImageLocation = anh;
         }
     }
 }

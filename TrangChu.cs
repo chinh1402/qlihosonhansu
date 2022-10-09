@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace quanLyThuVien
 {
-    public partial class Form1 : Form
+    public partial class TrangChu : Form
     {
-        public Form1()
+        public TrangChu()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace quanLyThuVien
 
         class Sach
         {
-            public string id, ten, tacGia, theLoai, namXuatBan, daMuon;
+            public string id, ten, tacGia, theLoai, nhaXuatBan, namXuatBan, tonKho,anh;
         }
 
         List<Sach> arr;
@@ -40,59 +40,59 @@ namespace quanLyThuVien
             string sql;
             keyword = keyword.Trim();
 
-            string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=quanLyThuVien;Integrated Security=True";
+            string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=quanLyThuVien2;Integrated Security=True";
 
             if (keyword != "")
             {
                 if (keyword.All(char.IsDigit) == true)
                 {
-                    sql = "select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.daMuon from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id where (s.id=" + keyword + " or s.ten like N'%" + keyword + "%' or tg.ten like N'%" + keyword + "%' or tl.ten like N'%" + keyword + "%' or s.namXuatBan=" + keyword + ")";
+                    sql = "select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.tonKho,n.ten,s.anh from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id inner join nhaXB as n on s.idNXB=n.id where (s.id=" + keyword + " or s.ten like N'%" + keyword + "%' or tg.ten like N'%" + keyword + "%' or tl.ten like N'%" + keyword + "%' or s.namXuatBan=" + keyword + " or n.ten like N'%" + keyword + "%')";
                     if (daMuon == true && chuaMuon==false)
                     {
-                        sql += " and s.daMuon=1";
+                        sql += " and s.tonKho=0";
                     }
                     else if (chuaMuon == true && daMuon==false)
                     {
-                        sql += " and s.daMuon=0";
+                        sql += " and s.tonKho>0";
                     }
                     else if(chuaMuon==false && daMuon == false)
                     {
-                        sql += " and s.daMuon=2";
+                        sql += " and s.tonKho<0";
                     }
 
                 }
                 else
                 {
-                    sql = "select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.daMuon from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id where (s.ten like N'%" + keyword + "%' or tg.ten like N'%" + keyword + "%' or tl.ten like N'%" + keyword + "%' )";
+                    sql = "select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.tonKho,n.ten,s.anh from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id inner join nhaXB as n on s.idNXB=n.id where (s.ten like N'%" + keyword + "%' or tg.ten like N'%" + keyword + "%' or tl.ten like N'%" + keyword + "%' or n.ten like N'%" + keyword + "%')";
                     if (daMuon == true && chuaMuon == false)
                     {
-                        sql += " and s.daMuon=1";
+                        sql += " and s.tonKho=0";
                     }
                     else if (chuaMuon == true && daMuon == false)
                     {
-                        sql += " and s.daMuon=0";
+                        sql += " and s.tonKho>0";
                     }
                     else if (chuaMuon == false && daMuon == false)
                     {
-                        sql += " and s.daMuon=2";
+                        sql += " and s.tonKho<0";
                     }
                 }
 
             }
             else
             {
-                sql = "select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.daMuon from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id";
+                sql = "select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.tonKho,n.ten,s.anh from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id inner join nhaXB as n on s.idNXB=n.id";
                 if (daMuon == true && chuaMuon == false)
                 {
-                    sql += " where s.daMuon=1";
+                    sql += " where s.tonKho=0";
                 }
                 else if (chuaMuon == true && daMuon == false)
                 {
-                    sql += " where s.daMuon=0";
+                    sql += " where s.tonKho>0";
                 }
                 else if (chuaMuon == false && daMuon == false)
                 {
-                    sql += " where s.daMuon=2";
+                    sql += " where s.tonKho<0";
                 }
             }
             
@@ -122,7 +122,9 @@ namespace quanLyThuVien
                 sach.tacGia = dr[2].ToString();
                 sach.theLoai = dr[4].ToString();
                 sach.namXuatBan = dr[3].ToString();
-                sach.daMuon = dr[5].ToString() == "True" ? "Đã bị mượn" : "Có thể mượn";
+                sach.tonKho = dr[5].ToString();
+                sach.nhaXuatBan=dr[6].ToString();
+                sach.anh = dr[7].ToString();
 
                 arr.Add(sach);
             }
@@ -130,7 +132,7 @@ namespace quanLyThuVien
             
             for(i = 0; i < arr.Count; i++)
             {
-                item=new ListViewItem(new[] { arr[i].id, arr[i].ten, arr[i].tacGia, arr[i].theLoai, arr[i].namXuatBan, arr[i].daMuon });
+                item=new ListViewItem(new[] { arr[i].id, arr[i].ten, arr[i].tacGia, arr[i].theLoai, arr[i].namXuatBan, arr[i].nhaXuatBan, arr[i].tonKho });
                 listView1.Items.Add(item);
             }
         }
@@ -141,6 +143,14 @@ namespace quanLyThuVien
             DataTable dt = search(textBox1.Text, daMuon, chuaMuon);
             listView1.Items.Clear();
             render(dt);
+            if (textBox1.Text.Trim() == "")
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,9 +164,10 @@ namespace quanLyThuVien
             string tacGia = item.SubItems[2].Text;
             string namXuatBan = item.SubItems[3].Text;
             string theLoai = item.SubItems[4].Text;
-            string daMuon = item.SubItems[5].Text;
-            string anh = @"D:\\Documents\\c_sharp\\bai-tap-tren-lop\\quanLyThuVien\\bin\\images\\image1.png";
-            Form2 form2 = new Form2(ten,tacGia,namXuatBan,theLoai,daMuon,anh) ;
+            string nhaXB = item.SubItems[5].Text;
+            string tonKho = item.SubItems[6].Text;
+            string anh = @"../images/" + arr[index].anh +".jpg";
+            ChiTietSach form2 = new ChiTietSach(ten,tacGia,namXuatBan,theLoai,nhaXB,tonKho,anh) ;
 
             form2.ShowDialog();
         }
@@ -166,6 +177,7 @@ namespace quanLyThuVien
             DataTable dt = search(textBox1.Text, daMuon, chuaMuon);
             listView1.Items.Clear();
             render(dt);
+            button1.Enabled = false;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -196,6 +208,14 @@ namespace quanLyThuVien
             }
 
             DataTable dt = search(textBox1.Text,daMuon,chuaMuon);
+            listView1.Items.Clear();
+            render(dt);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            DataTable dt = search(textBox1.Text, daMuon, chuaMuon);
             listView1.Items.Clear();
             render(dt);
         }

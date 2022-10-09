@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +47,189 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ChiTietSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ChiTietSach.Designer.cs">
+      <DependentUpon>ChiTietSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Class1.cs" />
+    <Compile Include="conection.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Dang Ky.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Dang Ky.Designer.cs">
+      <DependentUpon>Dang Ky.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dateTimeControl.cs" />
+    <Compile Include="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editing.cs" />
+    <Compile Include="mdiuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiuser.Designer.cs">
+      <DependentUpon>mdiuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ketNoi.cs" />
+    <Compile Include="mdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdi.Designer.cs">
+      <DependentUpon>mdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modify.cs" />
+    <Compile Include="mt_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mt_admin.designer.cs">
+      <DependentUpon>mt_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mt_methods.cs" />
+    <Compile Include="mt_tables.cs" />
+    <Compile Include="mt_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mt_user.designer.cs">
+      <DependentUpon>mt_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NXB.Designer.cs">
+      <DependentUpon>NXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pp_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pp_admin.designer.cs">
+      <DependentUpon>pp_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pp_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pp_user.designer.cs">
+      <DependentUpon>pp_user.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="QLSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLSach.designer.cs">
+      <DependentUpon>QLSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTL.designer.cs">
+      <DependentUpon>QLTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Render.cs" />
+    <Compile Include="suaxoatg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suaxoatg.designer.cs">
+      <DependentUpon>suaxoatg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs" />
+    <Compile Include="thongkeSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongkeSach.designer.cs">
+      <DependentUpon>thongkeSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thongkeTheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongkeTheLoai.designer.cs">
+      <DependentUpon>thongkeTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xemTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xemTacGia.designer.cs">
+      <DependentUpon>xemTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XoaTaiKhoanUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XoaTaiKhoanUser.Designer.cs">
+      <DependentUpon>XoaTaiKhoanUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChiTietSach.resx">
+      <DependentUpon>ChiTietSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Dang Ky.resx">
+      <DependentUpon>Dang Ky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiuser.resx">
+      <DependentUpon>mdiuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdi.resx">
+      <DependentUpon>mdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mt_admin.resx">
+      <DependentUpon>mt_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mt_user.resx">
+      <DependentUpon>mt_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NXB.resx">
+      <DependentUpon>NXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pp_admin.resx">
+      <DependentUpon>pp_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pp_user.resx">
+      <DependentUpon>pp_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +241,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLSach.resx">
+      <DependentUpon>QLSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTL.resx">
+      <DependentUpon>QLTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suaxoatg.resx">
+      <DependentUpon>suaxoatg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thongkeSach.resx">
+      <DependentUpon>thongkeSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thongkeTheLoai.resx">
+      <DependentUpon>thongkeTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xemTacGia.resx">
+      <DependentUpon>xemTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XoaTaiKhoanUser.resx">
+      <DependentUpon>XoaTaiKhoanUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,6 +283,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tu-lap-tuoi-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\user-icon--16121-large[1].png" />
+    <Content Include="Resources\user_access-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

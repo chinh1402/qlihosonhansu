@@ -1,6 +1,6 @@
 ﻿namespace quanLyThuVien
 {
-    partial class Form2
+    partial class ChiTietSach
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::quanLyThuVien.Properties.Resources.Tu_lap_tuoi_20;
             this.pictureBox1.Location = new System.Drawing.Point(21, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(232, 297);
@@ -81,73 +81,87 @@
             // 
             // textBox1
             // 
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(286, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(304, 34);
             this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Tự lập tuổi 20 ";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(356, 80);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(234, 26);
             this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Cao Phi Hải ";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(403, 133);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(187, 26);
             this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "2019";
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(360, 176);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(230, 26);
             this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "Giáo dục";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(282, 229);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Tình trạng :";
+            this.label4.Text = "NXB :";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(376, 223);
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(338, 223);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(214, 26);
+            this.textBox5.Size = new System.Drawing.Size(252, 26);
             this.textBox5.TabIndex = 9;
-            this.textBox5.Text = "Có sẵn ";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(21, 340);
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(362, 269);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(585, 26);
-            this.textBox6.TabIndex = 10;
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(228, 26);
+            this.textBox6.TabIndex = 11;
             // 
-            // Form2
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(282, 275);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Tồn kho :";
+            // 
+            // ChiTietSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 378);
             this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
@@ -158,7 +172,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form2";
+            this.Name = "ChiTietSach";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -180,5 +194,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label5;
     }
 }
