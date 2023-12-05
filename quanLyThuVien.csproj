@@ -54,7 +54,6 @@
       <DependentUpon>ChiTietSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="conection.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Dang Ky.cs">
       <SubType>Form</SubType>
