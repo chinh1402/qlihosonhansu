@@ -43,7 +43,7 @@ namespace quanLyThuVien
         public bool kiemtratrungten()
         {
             string qr = "select * from nhaXB where ten='" + textBox2.Text.Trim() + "'";
-            SqlConnection con = KetNoi.connectDB();
+            SqlConnection con = Connection.GetSqlConnection();
             SqlCommand cmd= new SqlCommand(qr, con);
             con.Open();
             SqlDataAdapter adt = new SqlDataAdapter(cmd);
@@ -66,7 +66,7 @@ namespace quanLyThuVien
         {
             DataTable dt2 = new DataTable();
             string sql = "select * from nhaXB";
-            SqlConnection con = KetNoi.connectDB();
+            SqlConnection con = Connection.GetSqlConnection();
             cmd=new SqlCommand(sql,con);
             adt = new SqlDataAdapter(cmd);
             adt.Fill(dt2);
@@ -78,7 +78,7 @@ namespace quanLyThuVien
         {
             DataTable dt2 = new DataTable();
             string sql = "select * from nhaXB where ten like '%"+t+"%' or diachi like '%"+t+"%' or website like '%"+t+"%'";
-            SqlConnection con = KetNoi.connectDB();
+            SqlConnection con = Connection.GetSqlConnection();
             cmd = new SqlCommand(sql, con);
             adt = new SqlDataAdapter(cmd);
             adt.Fill(dt2);
@@ -119,7 +119,7 @@ namespace quanLyThuVien
         {
             string sql = "select tenSach as 'Tên sách' from sach where idNXB=" + id;
             DataTable dt = new DataTable();
-            SqlConnection con = KetNoi.connectDB();
+            SqlConnection con = Connection.GetSqlConnection();
             con.Open();
             SqlCommand cmd = new SqlCommand(sql,con);
             SqlDataAdapter adt = new SqlDataAdapter(cmd);
@@ -209,7 +209,7 @@ namespace quanLyThuVien
                 query = "delete from nhaXB where id="+idHandle;
             }
             
-            SqlConnection con = KetNoi.connectDB();
+            SqlConnection con = Connection.GetSqlConnection();
             cmd = new SqlCommand(query, con);
             con.Open();
             cmd.ExecuteNonQuery();

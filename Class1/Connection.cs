@@ -10,7 +10,7 @@ namespace quanLyThuVien
 {
     internal class Connection
     {
-        private static string stringConnection = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLTV_db3;Integrated Security=True";
+        private static string stringConnection = @"Data Source=pc;Initial Catalog=finaldemo_upd1;Integrated Security=True";
         public static SqlConnection GetSqlConnection()
         {
             return new SqlConnection(stringConnection);

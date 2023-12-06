@@ -16,7 +16,6 @@ namespace QLTV
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLTV_db3;Integrated Security=True";
 
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
@@ -60,7 +59,7 @@ namespace QLTV
 
         private void QLTL_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(str);
+            connection = Connection.GetSqlConnection();
             connection.Open();
             loaddata();
         }
@@ -109,7 +108,7 @@ namespace QLTV
         public bool ktXoa(string id)
         {
             string sql = "select * from sach where idTheLoai=" + id;
-            SqlConnection conn=new SqlConnection(str);
+            SqlConnection conn= Connection.GetSqlConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataAdapter adt = new SqlDataAdapter(cmd);
@@ -132,12 +131,12 @@ namespace QLTV
             {
                 //cho phep xoa
                 string sql = "delete from theLoai where id=" + txtID.Text;
-                SqlConnection con = new SqlConnection(str);
+                SqlConnection con = Connection.GetSqlConnection();
                 SqlCommand cmd=new SqlCommand(sql, con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                connection = new SqlConnection(str);
+                connection = Connection.GetSqlConnection();
                 connection.Open();
                 loaddata();
             }

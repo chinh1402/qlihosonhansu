@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quanLyThuVien;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace formthongke
 {
     public partial class thongkeTheLoai : Form
     {
-        private SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TQJI1F7\SQLEXPRESS;Initial Catalog=""updatefinal (1)"";Integrated Security=True");
+        private SqlConnection conn = Connection.GetSqlConnection();
         public thongkeTheLoai()
         {
             InitializeComponent();

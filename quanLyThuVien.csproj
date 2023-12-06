@@ -54,7 +54,7 @@
       <DependentUpon>ChiTietSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="Connection.cs" />
+    <Compile Include="Class1\Connection.cs" />
     <Compile Include="Dang Ky.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +146,11 @@
     </Compile>
     <Compile Include="QLTL.designer.cs">
       <DependentUpon>QLTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTV_db3DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTV_db3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QuenMatKhau.cs">
       <SubType>Form</SubType>
@@ -267,6 +272,7 @@
     <EmbeddedResource Include="XoaTaiKhoanUser.resx">
       <DependentUpon>XoaTaiKhoanUser.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -281,6 +287,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLTV_db3DataSet.xsc">
+      <DependentUpon>QLTV_db3DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTV_db3DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTV_db3DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTV_db3DataSet.xss">
+      <DependentUpon>QLTV_db3DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Tu-lap-tuoi-20.png" />
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using quanLyThuVien;
 
 namespace muontra_newdesign
 {
@@ -14,7 +15,7 @@ namespace muontra_newdesign
 
         public static SqlConnection connectDB()
         {
-            string connString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLTV_db3;Integrated Security=True";
+            string connString = @"Data Source=pc;Initial Catalog=finaldemo_upd1;Integrated Security=True";
             conn = new SqlConnection(connString);
             return conn;
         }
@@ -29,7 +30,7 @@ namespace muontra_newdesign
 
         public static SqlCommand sqlconfig(SqlCommand cmd, string sql)
         {
-            conn = connectDB();
+            conn = Connection.GetSqlConnection();
             conn.Open();
             cmd = new SqlCommand(sql, conn);
             return cmd;

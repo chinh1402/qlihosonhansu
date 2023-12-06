@@ -18,7 +18,6 @@ namespace QLTV
 
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLTV_db3;Integrated Security=True";
 
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
@@ -53,7 +52,7 @@ namespace QLTV
 
         private void QLSach_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(str);
+            connection = Connection.GetSqlConnection();
             connection.Open();
             loaddata();
             txtMaSach.Enabled = false;

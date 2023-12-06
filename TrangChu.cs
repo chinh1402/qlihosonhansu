@@ -40,7 +40,7 @@ namespace quanLyThuVien
             string sql;
             keyword = keyword.Trim();
 
-            string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=quanLyThuVien2;Integrated Security=True";
+            string str = @"Data Source=pc;Initial Catalog=finaldemo_upd1;Integrated Security=True";
 
             if (keyword != "")
             {
@@ -99,7 +99,7 @@ namespace quanLyThuVien
 
             //select s.id,s.ten,tg.ten,tl.ten,s.namXuatBan,s.daMuon from sach as s inner join theLoai as tl on s.idTheLoai=tl.id inner join tacGia as tg on s.idTacGia=tg.id where s.id=1 or s.ten like '%a%' or tg.ten like '%a%' or tl.ten like '%a%' or s.namXuatBan=2000
 
-            conn = new SqlConnection(str);
+            conn = Connection.GetSqlConnection();
             conn.Open();
             cmd = new SqlCommand(sql, conn);
             dr = new SqlDataAdapter(cmd);

@@ -15,7 +15,7 @@ namespace formthongke
 {
     public partial class thongkeSach : Form
     {
-        private SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TQJI1F7\SQLEXPRESS;Initial Catalog=""updatefinal (1)"";Integrated Security=True");
+        private SqlConnection conn = Connection.GetSqlConnection();
         public thongkeSach()
         {
             
